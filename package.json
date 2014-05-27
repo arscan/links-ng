@@ -1,7 +1,9 @@
 {
   "name": "linksangular",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "connect": "~2.17.1"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
