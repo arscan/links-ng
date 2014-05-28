@@ -13,12 +13,24 @@ angular.module('linksAngularApp')
 .controller('MainCtrl', ['$scope', 'Link', function ($scope, Link) {
 
     $scope.linkInputKeystroke = function(ev){
+        /*
         if(ev.which === 13){
             if(ev.target.value.indexOf("http://") === 0){
                 $("#link-input-details").css("display", "block");
             }
         }
+       */
     };
+
+    $scope.link = new Link();
+    $scope.save = function(){
+        $scope.link.url = $scope.omnibox;
+        $scope.link.$save();
+        console.log($scope.link.tags);
+        $scope.links.push($scope.link);
+        $scope.link = new Link();
+    };
+
 }]);
 
 

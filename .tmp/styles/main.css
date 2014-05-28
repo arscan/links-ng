@@ -59,7 +59,7 @@ a.mainlinks {
 }
 
 #link-input-details {
-  display: none;
+  /* display: none; */
   margin-top: 15px;
 }
 

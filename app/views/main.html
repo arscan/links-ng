@@ -4,18 +4,18 @@
         <input type="text" type="url" name="url" id="form-url" placeholder="Paste new link here or enter search term" class="form-control" ng-model="omnibox" ng-keypress="linkInputKeystroke($event)"/>
         <span id="search-form-icon" class="glyphicon glyphicon-link form-control-feedback" ng-show="omnibox | startsWithHttp" ></span>
     </div>
-    <div id="link-input-details">
+    <div id="link-input-details" ng-show="omnibox | startsWithHttp">
         <div class="form-group has-feedback">
-            <input type="text" name="name" value="Loading" id="form-name" class="form-control" />
+            <input type="text" name="name" value="Loading" id="form-name" class="form-control" ng-model="link.name" />
         </div>
         <div class="form-group">
-            <textarea name="summary" placeholder="Summary" class="form-control" rows="5"></textarea>
+            <textarea name="summary" placeholder="Summary" class="form-control" rows="5" ng-model="link.summary"></textarea>
         </div>
         <div class="form-group">
-            <input type="text" name="tag_list" placeholder="tags" class="form-control" />
+            <input type="text" name="tag_list" placeholder="tags" class="form-control" ng-model="link.tag_list" />
         </div>
         <button type="submit" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary" ng-click="save(link)">Save</button>
     </div>
 </form>
 
@@ -23,7 +23,7 @@
     <div class="col-md-10">
         <div ng-repeat="link in links | filter:omnibox">
             <div>
-                <a href="{{link.shortlink}}" class="mainlinks">{{link.name}}</a> 
+                <a ng-href="{{link.url}}" target="_blank" class="mainlinks">{{link.name}}</a> 
             </div>
             <div>
                 <ul class="list-inline text-muted">
