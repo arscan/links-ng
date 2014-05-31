@@ -11,6 +11,16 @@ angular.module('linksAngularApp')
 
 angular.module('linksAngularApp')
 .controller('MainCtrl', ['$scope', 'Link', function ($scope, Link) {
+    $scope.page = 0;
+    $scope.itemsPerPage=5;
+
+    $scope.nextPage = function(){
+        $scope.page++;
+    };
+
+    $scope.prevPage = function(){
+        $scope.page--;
+    };
 
     $scope.linkInputKeystroke = function(ev){
         /*

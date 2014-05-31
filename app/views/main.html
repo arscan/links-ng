@@ -21,7 +21,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <div ng-repeat="link in links | filter:omnibox">
+        <div ng-repeat="link in links | filter:omnibox | startAt: page * itemsPerPage | limitTo:20" >
             <div>
                 <a ng-href="{{link.url}}" target="_blank" class="mainlinks">{{link.name}}</a> 
             </div>
@@ -39,5 +39,7 @@
                 </ul>
             </div>
         </div>
+        <div ng-click="prevPage()">Prev</div>
+        <div ng-click="nextPage()">Next</div>
     </div>
 </div>
