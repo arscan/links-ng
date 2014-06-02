@@ -70,3 +70,7 @@ a.mainlinks {
 #search-form-icon {
   top: 20px;
 }
+
+.pager li {
+  cursor: pointer;
+}

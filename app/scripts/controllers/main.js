@@ -12,7 +12,7 @@ angular.module('linksAngularApp')
 angular.module('linksAngularApp')
 .controller('MainCtrl', ['$scope', 'Link', function ($scope, Link) {
     $scope.page = 0;
-    $scope.itemsPerPage=5;
+    $scope.itemsPerPage=10;
 
     $scope.nextPage = function(){
         $scope.page++;
